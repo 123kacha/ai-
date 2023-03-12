@@ -3,13 +3,16 @@
 
 # In[48]:
 
-
+import configparser
 import tkinter as tk
 import openai
 import threading
 
-openai.api_key = "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"  # supply your API key however you choose
+config = configparser.ConfigParser()
+config.read("config.txt")
 
+openai.api_key = config['example']["key"]  # supply your API key however you choose
+print(config['example']["key"])
 def submit_text():
    # Get the content of the text box and print it
    text = text_input.get("1.0", "end-1c") # Get text without the newline character
