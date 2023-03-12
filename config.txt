@@ -1,0 +1,2 @@
+[example]
+key = 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
